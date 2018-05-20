@@ -343,6 +343,16 @@ function dimension_save_meta_boxes_data( $post_id ) {
 
 add_action( 'save_post', 'dimension_save_meta_boxes_data', 10, 2 );
 
+* Custom template tags for this theme.
+  */
+  */
+ require get_template_directory() . '/inc/template-tags.php';
+ require get_template_directory() . '/inc/template-tags.php';
++require get_template_directory() . '/inc/template-functions.php';
+ 
+ 
+ /**
+ /**
 
 /* --- shortcodes --------------------------------------------------------------------- */
 
