@@ -1,0 +1,4 @@
+## Just tracking when and where I  change the name of an array
+Added file inc/template-functions.php
+line five changed @package twentysixteen_indieweb to dimension
+line fourteen+function twentysixteen_body_classes( to dimension_body_classes (may remove the section abiout background image)
