@@ -281,18 +281,18 @@ function dimension_build_meta_box( $post ){
 			<p>
 			<label for="button_label" style="font-weight:bold">Front Box Label</label><br />
 			This is the short name to fit in the box links on the front of the site, if empty it will use the post title.<br />
-			<input type="text" name="button_label" value="<?php echo $button_label; ?>" style="width:100%" />
+			<input class="p-name" type="text" name="button_label" value="<?php echo $button_label; ?>" style="width:100%" />
 			</p>	
 
 
 			<p>
 			<label for="go_button_name" style="font-weight:bold">Go Button Label</label><br />
-			<input type="text" name="go_button_name" value="<?php echo $go_button_name; ?>" style="width:100%" />
+			<input class="p-name" type="text" name="go_button_name" value="<?php echo $go_button_name; ?>" style="width:100%" />
 			</p>
 				
 			<p>
 			<label for="dimension_link" style="font-weight:bold">Go Button Destination URL</label><br />
-			<input type="text" name="dimension_link" value="<?php echo $current_link; ?>" style="width:100%" />
+			<input class="p-name" type="text" name="dimension_link" value="<?php echo $current_link; ?>" style="width:100%" />
 			</p>
 			
 			<p>
@@ -343,16 +343,6 @@ function dimension_save_meta_boxes_data( $post_id ) {
 
 add_action( 'save_post', 'dimension_save_meta_boxes_data', 10, 2 );
 
-* Custom template tags for this theme.
-  */
-  */
- require get_template_directory() . '/inc/template-tags.php';
- require get_template_directory() . '/inc/template-tags.php';
-+require get_template_directory() . '/inc/template-functions.php';
- 
- 
- /**
- /**
 
 /* --- shortcodes --------------------------------------------------------------------- */
 
