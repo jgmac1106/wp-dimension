@@ -5,7 +5,7 @@
 						
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>	
 					
-								<div id="staticpage" <?php post_class('post single'); ?>>	
+								<div class="h-entry" id="staticpage" <?php post_class('post single'); ?>>	
 						
 									<h2 class="major"><?php the_title(); ?></h2>
 							
@@ -19,7 +19,7 @@
 									<?php the_content(); ?>
 							
 							
-									<p class="align-center"><a href="<?php echo site_url(); ?>" class="button special icon  fa-hand-o-left">return</a></p>
+									<p class="p-name align-center"><a class="u-url" href="<?php echo site_url(); ?>" class="button special icon  fa-hand-o-left">return</a></p>
 
 								</div>
 									
