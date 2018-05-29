@@ -1,12 +1,13 @@
 <?php get_header(); ?>
 
 			<!-- Header -->
-				<header id="header">
+				<header id="header" class="h-card">
+					
 					<div class="logo">
 	
 	
 					<?php if ( get_theme_mod( 'dimension_logo' ) ) : ?>
-						<img src="<?php echo esc_url( get_theme_mod( 'dimension_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+						<img class="u-photo" src="<?php echo esc_url( get_theme_mod( 'dimension_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 					<?php else : ?>
 						<span class="icon fa-cogs"></span>
 					<?php endif; ?>
@@ -15,10 +16,12 @@
 					
 					<div class="content">
 						<div class="inner">
-							<h1><?php bloginfo( 'name' ); ?></h1>
+							
+							<h1 class="p-name"><?php bloginfo( 'name' ); ?><link a class="u-url" href="https://indieweb.jgregorymcverry.com/blog/" rel="me"></h1>
 							
 							<?php if ( get_bloginfo( 'description' )  !== '' ) { ?>
-								<h2><?php bloginfo( 'description' ); ?></h2>
+								<h2 class="p-note"><?php bloginfo( 'description' ); ?></h2>
+								<!-- If you are using an email, title , or organization you may want to change your h-card. Please see http://microformats.org/wiki/h-card for more info --!>
 							<?php } ?>
 							
 							<!-- begin front quote (if used) -->
@@ -31,7 +34,8 @@
 								}
 								
 							?>
-						</div>
+						
+							</div>
 					</div>
 					
 					
@@ -88,15 +92,15 @@
 								
 								
 								if ( !empty( $button_label ) ) {
-									echo '<article id="' . sanitize_title( $button_label ) . '"><h2 class="major">' . get_the_title() . '</h2>';		
+									echo '<article class="h-entry" id="' . sanitize_title( $button_label ) . '"><div class="p-name"><h2 class="major">' . get_the_title() . '</h2></div>';		
 								} else {
-									echo '<article id="' . sanitize_title( get_the_title() ) . '"><h2 class="major">' . get_the_title() . '</h2>';
+									echo '<article class="h-entry" id="' . sanitize_title( get_the_title() ) . '"><div class="p-name"><h2 class="major">' . get_the_title() . '</h2></div>';
 								}
 								
 								if ( has_post_thumbnail() ) {
 							
 									if ( !empty($the_link) ) {
-										echo '<a href="' . $the_link . '"><span class="image main">';
+										echo '<a class="u-url" href="' . $the_link . '"><span class="image main">';
 										the_post_thumbnail();
 										echo '</span></a>';
 									 } else {
@@ -113,7 +117,7 @@
 								
 									$go_button_name = ( !empty( get_post_meta( get_the_ID(), '_go_button_name', true ) ) ) ? get_post_meta( get_the_ID(), '_go_button_name', true ) : 'Go';
 									
-									echo '<p class="align-center"><a href="' . $the_link . '" class="button icon ' . $fa_icon . '">' . $go_button_name .  '</a></p>';
+									echo '<p class="align-center"><a class="u-url" href="' . $the_link . '" class="button icon ' . $fa_icon . '">' . $go_button_name .  '</a></p>';
 								}
 							
 							
